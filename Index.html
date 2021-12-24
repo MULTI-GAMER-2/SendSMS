@@ -1,0 +1,131 @@
+<html>
+<center>
+    <head>
+        <title>Enviar Mensagens</title>
+        <script src="https://kit.fontawesome.com/be2c2b534e.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+<div id="Container">
+
+    <button id="Send">Enviar</button>
+    
+    </div>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+          
+        
+       var to = document.getElementById("to");
+       var message = document.getElementById("message");
+       var Send = document.getElementById("Send") 
+       
+      Send.addEventListener("click", function(){
+       $.get("https://smschef.com/system/api/send?key=a67156e124c7540961389b790eea116d024e1ccf&phone=+351966440239&message=Feliz Natal ❤️", function(data) { 
+    
+    var dataParsed = JSON.parse(data)
+    
+    if(dataParsed.status == 200){
+    
+    
+swal({
+
+  title: "Message Status: "+dataParsed.status,
+  text: "Sucess. The message is being sent 😊👍",
+  icon: "success",
+  button: "Ok, Thank you!",
+});
+    
+    }else{
+        
+         
+swal({
+
+  title: "Message Status: "+dataParsed.status,
+  text: "Error 😔. "+dataParsed.message,
+  icon: "error",
+  button: "Ok",
+});
+
+    }
+    });
+    
+    $.get("https://smschef.com/system/api/send?key=a67156e124c7540961389b790eea116d024e1ccf&phone=+351966440239&message=Feliz Natal ❤️", function(data) { 
+    
+    var dataParsed = JSON.parse(data)
+    
+    if(dataParsed.status == 200){
+    
+    
+swal({
+
+  title: "Message Status: "+dataParsed.status,
+  text: "Sucess. The message is being sent 😊👍",
+  icon: "success",
+  button: "Ok, Thank you!",
+});
+    
+    }else{
+        
+         
+swal({
+
+  title: "Message Status: "+dataParsed.status,
+  text: "Error 😔. "+dataParsed.message,
+  icon: "error",
+  button: "Ok",
+});
+
+    }
+    });
+});   
+    </script>
+    <style>
+        
+        html{
+            
+            background:linear-gradient(#00FFFF, #FFF)
+            
+        }
+    
+    #Send{
+        
+        background-color: black;
+        color: white;
+        width: 70vw;
+        height: 10vh;
+        border-radius: 20px;
+        border: none;
+        font-size: 5vh;
+        transition: 0.5s ease-in-out; 
+    }
+    
+    #Send:hover {
+    
+    background-color: white;
+    color: black;
+    width: 80vw;
+    height: 13vh;
+    
+    }
+    
+    #Container{
+    
+         
+        
+        transition: 1.5s ease-in-out;
+        margin-top: 40vh;
+        
+    }
+    
+    #Container:hover{
+        
+        
+        margin-top: -40vh;
+        
+    }
+    
+    
+    </style>
+    </body>
+    </center>
+</html>
