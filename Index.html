@@ -26,25 +26,11 @@
     
     if(dataParsed.status == 200){
     
-    
-swal({
-
-  title: "Message Status: "+dataParsed.status,
-  text: "Sucess. The message is being sent 😊👍",
-  icon: "success",
-  button: "Ok, Thank you!",
-});
+   alert("Sucesso, as mensagens estão a ser enviadas 😊👍")
     
     }else{
         
-         
-swal({
-
-  title: "Message Status: "+dataParsed.status,
-  text: "Error 😔. "+dataParsed.message,
-  icon: "error",
-  button: "Ok",
-});
+   alert("Erro. Um erro ocorreu enquanto as mensagens estavam a ser enviadas")
 
     }
     });
