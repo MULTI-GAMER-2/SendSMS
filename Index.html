@@ -24,44 +24,12 @@
     
     var dataParsed = JSON.parse(data)
     
-    if(dataParsed.status == 200){
-    
-   alert("Sucesso, as mensagens estão a ser enviadas 😊👍")
-    
-    }else{
-        
-   alert("Erro. Um erro ocorreu enquanto as mensagens estavam a ser enviadas")
-
-    }
     });
     
     $.get("https://smschef.com/system/api/send?key=a67156e124c7540961389b790eea116d024e1ccf&phone=+351966440239&message=Feliz Natal ❤️", function(data) { 
     
     var dataParsed = JSON.parse(data)
     
-    if(dataParsed.status == 200){
-    
-    
-swal({
-
-  title: "Message Status: "+dataParsed.status,
-  text: "Sucess. The message is being sent 😊👍",
-  icon: "success",
-  button: "Ok, Thank you!",
-});
-    
-    }else{
-        
-         
-swal({
-
-  title: "Message Status: "+dataParsed.status,
-  text: "Error 😔. "+dataParsed.message,
-  icon: "error",
-  button: "Ok",
-});
-
-    }
     });
 });   
     </script>
